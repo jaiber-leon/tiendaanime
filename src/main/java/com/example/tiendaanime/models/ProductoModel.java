@@ -1,5 +1,6 @@
 package com.example.tiendaanime.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,7 +25,8 @@ public class ProductoModel {
     @Column(name = "personaje", nullable = false)
     private String personaje;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
+    @JsonIgnore
     @JoinColumn(name="tipoproductoid",referencedColumnName = "idTipoproducto")
     private TipoProductoModel tipoProducto; // Nombre del atributo debe coincidir con mappedBy en TipoProductoModel
 
