@@ -15,12 +15,10 @@ public class ProductoController {
 
     @GetMapping("/optenerProductosPorPersonaje/{personaje}")
     public List<ProductoModel> optenerProductosPorPersonaje (@PathVariable String personaje){
-            List<ProductoModel> productos = impProductoService.optenerLosProductosPorPersonaje(personaje);
-            return productos;
+            return impProductoService.optenerLosProductosPorPersonaje(personaje);
     }
     @GetMapping("/obtenertodoporserie/{serie}")
     public List<ProductoModel> obtenerTodoPorSerie (@PathVariable String serie){
-        List<ProductoModel> productos = impProductoService.obtenerLosProductosPorSerie(serie);
-        return productos;
+        return impProductoService.obtenerLosProductosPorSerie(serie);
     }
 }
