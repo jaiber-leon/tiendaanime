@@ -16,12 +16,15 @@ import java.util.List;
 public class FacturaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_factura;
+    @Column (name = "id_factura")
+    private Long idFactura;
     @Column(name = "fecha")
     private Date fecha;
 
     @ManyToMany
-    @JoinTable(name = "factura_producto",joinColumns=@JoinColumn(name = "id_factura"),
-    inverseJoinColumns = @JoinColumn(name = "id_producto"))
+    @JoinTable(
+            name = "factura_producto", // Nombre de la tabla de unión
+            joinColumns = @JoinColumn(name = "idFactura"), // Columna en la tabla de unión que hace referencia a FacturaModel
+            inverseJoinColumns = @JoinColumn(name = "id_producto"))
     private List<ProductoModel> productoModels;
 }
