@@ -16,4 +16,10 @@ public interface IProductoRepository extends JpaRepository<ProductoModel, Long> 
 
     @Query(value = "SELECT * FROM producto p WHERE p.serie = :serie", nativeQuery = true)
     List<ProductoModel> findAllBySerie(@Param("serie")String serie);
+
+    @Query(value = "SELECT p.* FROM producto p INNER JOIN tipo_producto t ON p.tipoproductoid = t.id_tipoProducto " +
+            "WHERE t.tipo = :tipo",nativeQuery = true)
+    List<ProductoModel> findAllByTipoProducto(@Param("tipo")String tipo);
+
+
 }

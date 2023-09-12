@@ -8,4 +8,5 @@ public interface IProductoServices {
 
     List<ProductoModel> optenerLosProductosPorPersonaje (String personaje);
     List<ProductoModel> obtenerLosProductosPorSerie (String serie);
+    List<ProductoModel> obtenerProductosPorTipo (String tipo);
 }

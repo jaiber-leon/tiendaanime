@@ -26,7 +26,17 @@ public class ImpProductoService implements IProductoServices {
 
     @Override
     public List<ProductoModel> obtenerLosProductosPorSerie(String serie) {
-        List<ProductoModel> producto = iProductoRepository.findAllBySerie(serie);
+        try {
+            List<ProductoModel> producto = iProductoRepository.findAllBySerie(serie);
+            return producto;
+        }catch (Exception e){
+            throw new ResourceNotFound("no se encontro productos con la serie indicada: "+serie);
+        }
+        }
+
+    @Override
+    public List<ProductoModel> obtenerProductosPorTipo(String tipo) {
+        List<ProductoModel> producto = iProductoRepository.findAllByTipoProducto(tipo);
         return producto;
     }
 
