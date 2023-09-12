@@ -13,4 +13,7 @@ public interface IProductoRepository extends JpaRepository<ProductoModel, Long> 
 
     @Query(value = "SELECT * FROM producto p WHERE p.personaje = :personaje", nativeQuery = true)
     List<ProductoModel> findAllByPersonaje(@Param("personaje") String personaje);
+
+    @Query(value = "SELECT * FROM producto p WHERE p.serie = :serie", nativeQuery = true)
+    List<ProductoModel> findAllBySerie(@Param("serie")String serie);
 }

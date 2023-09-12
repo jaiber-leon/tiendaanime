@@ -24,4 +24,10 @@ public class ImpProductoService implements IProductoServices {
 
     }
 
+    @Override
+    public List<ProductoModel> obtenerLosProductosPorSerie(String serie) {
+        List<ProductoModel> producto = iProductoRepository.findAllBySerie(serie);
+        return producto;
+    }
+
 }
