@@ -24,7 +24,7 @@ public class ProductoController {
     }
 
     @GetMapping("/obtenerportipo/{tipo}")
-    public List<ProductoModel> obtenerPorTipo (@PathVariable String tipo){
+    public List<ProductoDto> obtenerPorTipo (@PathVariable String tipo){
         return impProductoService.obtenerProductosPorTipo(tipo);
     }
 }

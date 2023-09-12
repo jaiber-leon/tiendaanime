@@ -48,9 +48,14 @@ public class ImpProductoService implements IProductoServices {
 
 
     @Override
-    public List<ProductoModel> obtenerProductosPorTipo(String tipo) {
+    public List<ProductoDto> obtenerProductosPorTipo(String tipo) {
         List<ProductoModel> producto = iProductoRepository.findAllByTipoProducto(tipo);
-        return producto;
+        List<ProductoDto> productoDtoList = new ArrayList<>();
+        for (ProductoModel productoModel : producto){
+            ProductoDto productoDto = productoMapper.convertirModeloaDTO(productoModel);
+            productoDtoList.add(productoDto);
+        }
+        return productoDtoList;
     }
 
 }

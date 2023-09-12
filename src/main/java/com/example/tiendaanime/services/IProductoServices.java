@@ -9,5 +9,5 @@ public interface IProductoServices {
 
     List<ProductoDto> optenerLosProductosPorPersonaje (String personaje);
     List<ProductoDto> obtenerLosProductosPorSerie (String serie);
-    List<ProductoModel> obtenerProductosPorTipo (String tipo);
+    List<ProductoDto> obtenerProductosPorTipo (String tipo);
 }
