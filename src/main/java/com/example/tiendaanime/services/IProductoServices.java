@@ -8,6 +8,6 @@ import java.util.List;
 public interface IProductoServices {
 
     List<ProductoDto> optenerLosProductosPorPersonaje (String personaje);
-    List<ProductoModel> obtenerLosProductosPorSerie (String serie);
+    List<ProductoDto> obtenerLosProductosPorSerie (String serie);
     List<ProductoModel> obtenerProductosPorTipo (String tipo);
 }

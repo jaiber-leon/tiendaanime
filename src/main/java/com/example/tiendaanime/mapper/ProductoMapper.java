@@ -14,8 +14,6 @@ public class ProductoMapper {
                 .personaje(productoModel.getPersonaje())
                 .stock(productoModel.getStock())
                 .precio(productoModel.getPrecio())
-                .tipoProducto(productoModel.getTipoProducto())
-                .facturas(productoModel.getFacturas())
                 .build();
 
     }
@@ -27,9 +25,6 @@ public class ProductoMapper {
             productoModel.setPersonaje(productoModel.getPersonaje());
             productoModel.setStock(productoModel.getStock());
             productoModel.setPrecio(productoDto.getPrecio());
-            productoModel.setTipoProducto(productoDto.getTipoProducto());
-            productoModel.setFacturas(productoDto.getFacturas());
-
             return productoModel;
     }
 }

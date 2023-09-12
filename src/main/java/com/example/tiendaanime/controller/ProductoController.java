@@ -19,7 +19,7 @@ public class ProductoController {
             return impProductoService.optenerLosProductosPorPersonaje(personaje);
     }
     @GetMapping("/obtenertodoporserie/{serie}")
-    public List<ProductoModel> obtenerTodoPorSerie (@PathVariable String serie){
+    public List<ProductoDto> obtenerTodoPorSerie (@PathVariable String serie){
         return impProductoService.obtenerLosProductosPorSerie(serie);
     }
 
